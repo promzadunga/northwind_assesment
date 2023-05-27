@@ -20,7 +20,7 @@ placed under scrpits named perdict_customers_next_order.py
 
 4. Explain under which conditions you would use MySQL and Mongo?
 - Structured Data: If the data has a fixed schema and requires strict adherence to relationships between tables, MySQL is a good choice. also if the data is more structured and it is not large volumes of data that we are storing then Mysql will be more suitable
-- Flexible and Unstructured Data: MongoDB. It allows flexible schema design, enabling easy storage and retrieval of diverse data formats. high throughput and large-scale data storage, Real-time Analytics. if we are processing large volums of data and want to do it in real-time then MongoDB is a great choice.
+- Flexible and Unstructured Data: MongoDB. It allows flexible schema design, enabling easy storage and retrieval of diverse data formats. high throughput and large-scale data storage, Real-time Analytics. if we are processing large volums of data and want to process it in real-time then MongoDB is a great choice.
 6. Explain your choice in context of the CAP Theorem?
 -MySQL places a strong emphasis on consistency (C) and partition tolerance (P). It is an ACID-compliant database that prioritizes data consistency and integrity. In the event of a network partition or failure, MySQL uses techniques like replication and clustering to ensure data availability (A) and partition tolerance. However, achieving high availability in MySQL can sometimes require trade-offs in terms of response time and system complexity so if we want more consistent data and we can afford to have down time in our system then we can use mysql as it prioritizes C and P of the CAP theorem and compromises A.
 
