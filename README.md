@@ -3,8 +3,8 @@
 
 1. Script 1 - Create a docker script to start an existing mysql docker
 instance.
-- placed under scrips folder named docker-compose.yml run the command below to start mysql provided that docker and docker compose are installed
-- sudo docker-compose up -d
+- placed under scrips folder named docker-compose.yml run the command below to start mysql provided that docker and docker compose are installed and the command should be ran in the folder where this file is placed
+- docker-compose up -d
 2. Script 2 - Create a script to import the orders details information into
 the mysql database.
 - placed under scripts named import_into_orders_details.sql
