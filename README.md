@@ -28,6 +28,58 @@ placed under scrpits named perdict_customers_next_order.py
 - 
 8. Explain and draw a diagram on how you would design the above
 
+        
+        |    Azure VMs     |
+        | (MySQL Database) |
+      
+                 |
+       
+        | Azure Cosmos DB |
+        |  (MongoDB API)  |
+        
+                 |
+        
+        |  Azure Databricks  |
+       
+                 |
+      
+        | Azure Data Factory|
+        
+                 |
+        
+        |   Azure Functions  |
+        
+                 |
+       
+        |   Azure Logic Apps |
+       
+                 |
+        
+        |  Azure Event Grid |
+        +--------+--------+
+                 |
+        
+        |  Azure Monitor  |
+        
+                 |
+        
+        | Azure Blob Storage |
+      
+                 |
+       
+        |   Azure Networking |
+       
+                 |
+       
+        | Azure Load Balancer |
+        
+                 |
+       
+        |Azure Cosmos DB  |
+        | Multi-Region Replication|
+       
+
+
 a. What technologies would you use in the cloud stack?
 Azure Virtual Machines:
 Set up one or more virtual machines to host the MySQL database. we can choose the appropriate VM size based on our workload and performance requirements.
