@@ -192,13 +192,11 @@ to be more robust, scalable, reliable and real time.
 # Order Analysis
 Please provide scripts and results for the following:
 1. Which day of the week has the most orders?
-- placed under scripts named day_with_most_orders.sql
-- 
+- placed under scripts named day_with_most_orders.sql 
  | day_of_week | order_count |
  | Saturday | 97 |
 3. Which time of the day do people order the most?
 - placed under scripts named time_with_most_orders.sql
-- 
  | hour_of_day | order_count |
  | 0 | 600 |
 5. Which order does the user buy first most of the time?
