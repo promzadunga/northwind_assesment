@@ -26,20 +26,24 @@ mysql_properties = {
 customers_df = spark.read.jdbc(mysql_url, "customers", properties=mysql_properties)
 orders_df = spark.read.jdbc(mysql_url, "orders", properties=mysql_properties)
 
-customers_df = customers_df.na.fill(None)
-orders_df = orders_df.na.fill(None)
+# Join customers_df and orders_df on customer_id
+joined_df = customers_df.join(orders_df, "customer_id", "inner")
+
+# fill all null values with None 
+joined_df = joined_df.na.fill(None)
+
 
 # Convert date columns in orders_df DataFrame
-orders_df = orders_df.withColumn("order_date", to_date(col("order_date"), "yyyy-MM-dd")) \
+joined_df = joined_df.withColumn("order_date", to_date(col("order_date"), "yyyy-MM-dd")) \
                      .withColumn("shipped_date", to_date(col("shipped_date"), "yyyy-MM-dd")) \
                      .withColumn("paid_date", to_date(col("paid_date"), "yyyy-MM-dd"))
 
 # Calculating the days since the last order for each customer
 window_spec = Window.partitionBy("customer_id").orderBy(col("order_date").desc())
-customers_df = customers_df.withColumn("days_since_last_order", datediff(col("order_date"), expr("LAG(order_date) OVER {}".format(window_spec)))))
+joined_df = customers_df.withColumn("days_since_last_order", datediff(col("order_date"), expr("LAG(order_date) OVER {}".format(window_spec)))))
 
 # Selecting relevant columns for training
-training_data = customers_df.select("customer_id", "days_since_last_order", "order_date")
+training_data = joined_df.select("customer_id", "days_since_last_order", "order_date")
 
 # Droping rows with null values in the training data
 training_data = training_data.dropna()
