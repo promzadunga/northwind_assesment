@@ -167,7 +167,7 @@ to be more robust, scalable, reliable and real time.
 - Apache Airflow: Airflow is a platform for programmatically authoring, scheduling, and monitoring workflows. It can be used to orchestrate the data processing pipeline, schedule tasks, and monitor their execution.
 
 3. Why would you choose these technologies?
-- Scalability: Apache Kafka, Apache Spark, Apache Cassandra, and Apache Hadoop are all designed to scale horizontally, allowing you to handle increased data volumes and processing demands on Black Friday.
+- Scalability: Apache Kafka, Apache Spark and Apache Hadoop are all designed to scale horizontally, allowing you to handle increased data volumes and processing demands on Black Friday.
 
 - Real-time Processing: Kafka and Spark enable real-time data processing, allowing you to handle and analyze the incoming order data in near real-time.
 
