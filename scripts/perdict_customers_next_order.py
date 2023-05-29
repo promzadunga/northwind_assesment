@@ -61,7 +61,7 @@ model = lr.fit(training_data)
 
 # Select a specific customer for prediction
 customer_id = 1
-customer_data = customers_df.filter(col("customer_id") == customer_id).select("customer_id", "days_since_last_order")
+customer_data = joined_df.filter(col("customer_id") == customer_id).select("customer_id", "days_since_last_order")
 
 # Transform the customer data using the feature vector assembler
 customer_data = assembler.transform(customer_data)
