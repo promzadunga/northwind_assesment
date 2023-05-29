@@ -40,7 +40,7 @@ joined_df = joined_df.withColumn("order_date", to_date(col("order_date"), "yyyy-
 
 # Calculating the days since the last order for each customer
 window_spec = Window.partitionBy("customer_id").orderBy(col("order_date").desc())
-joined_df = customers_df.withColumn("days_since_last_order", datediff(col("order_date"), expr("LAG(order_date) OVER {}".format(window_spec)))))
+joined_df = joined_df.withColumn("days_since_last_order", datediff(col("order_date"), expr("LAG(order_date) OVER {}".format(window_spec)))))
 
 # Selecting relevant columns for training
 training_data = joined_df.select("customer_id", "days_since_last_order", "order_date")
