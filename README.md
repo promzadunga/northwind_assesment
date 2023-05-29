@@ -80,7 +80,7 @@ placed under scrpits named perdict_customers_next_order.py
        
 
 
-a. What technologies would you use in the cloud stack?
+a. What technologies would you use in the cloud stack??
 Azure Virtual Machines:
 Set up one or more virtual machines to host the MySQL database. we can choose the appropriate VM size based on our workload and performance requirements.
 Azure Cosmos DB (MongoDB API):
